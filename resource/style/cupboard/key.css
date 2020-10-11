@@ -1,0 +1,14 @@
+# meta
+button.css
+# meta
+
+form * {
+    font-size: 0.7em;
+    padding: 1rem;
+    border: none;
+    border-color: #eeeeee;
+    width: fit-content;
+    border-radius: 1em;
+    margin: 0.1em;
+    margin-bottom: 1em;
+}

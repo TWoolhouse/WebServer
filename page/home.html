@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+
+<link rel="stylesheet" type="text/css" href="/style/dark.css">
+<link rel="stylesheet" type="text/css" href="/style/home.css">
+
+<head>
+    <script>history.replaceState({}, null, "/")</script>
+    <title>Welcome!</title>
+</head>
+
+<body>
+
+    <h1>Hello Darling</h1>
+    <div>
+        <p>Connection: <py>value(f"{request.client.peer}:{request.client.port}")</py></p>
+        <p>Server: <py>value(f"{request.client.hostname}:{request.client.server.https if request.client.ssl else request.client.server.http}")</py></p>
+        <img src="/img/home.png" title="This is Art. Please, stare at the Art." alt="SMILE :)">
+        <!-- <p><a href="https://youtu.be/ASZooYTwgEo">https://youtu.be/ASZooYTwgEo</a></p> -->
+    </div>
+</body>
+
+</html>

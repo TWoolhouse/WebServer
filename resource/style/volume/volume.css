@@ -1,0 +1,24 @@
+.volume .flip {
+    /* transform: rotate(180deg); */
+    transform: scale(1, -1);
+}
+
+.volume .slider * {
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+}
+
+.volume .media button {
+    width: 1.2em;
+    height: 1.2em;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.volume {
+    font-size: 0.7em;
+}
+.volume .display {
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+
+<link rel="stylesheet" type="text/css" href="/style/dark.css">
+<link rel="stylesheet" type="text/css" href="/style/instagram/search.css">
+<!-- <link rel="stylesheet" type="text/css" href="/style/instagram/home.css"> -->
+
+<head>
+    <title>
+        <py>value(request.chat.name)</py>
+    </title>
+</head>
+
+<body>
+
+    <h1>Result Error</h1>
+    <p><py>value(request.client.session.search["err"])</py><p>
+    <button type="button" onclick="location.href='/ig/<py>value(request.chat.name)</py>/search/'">Search</button>
+
+</body>
+
+</html>

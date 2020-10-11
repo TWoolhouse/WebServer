@@ -1,0 +1,31 @@
+# meta
+link.css
+# meta
+
+form.search * {
+    font-size: 0.7em;
+    padding: 1rem;
+    border: none;
+    border-color: #eeeeee;
+    width: fit-content;
+    border-radius: 1em;
+    margin: 0.1em;
+    margin-bottom: 1em;
+}
+
+form.search button, form.search .submit {
+    width: fit-content;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+    font-size: 0.5em;
+    border-radius: 2em;
+    border-color: ;
+    background-color: #eeeeee;
+    color: #292929;
+    border-style: double;
+    cursor: pointer;
+}

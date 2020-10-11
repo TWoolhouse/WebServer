@@ -1,0 +1,35 @@
+# meta
+volume/base.css
+volume/volume.css
+# meta
+
+.volume {
+    font-size: 1em;
+}
+
+.volume p.display {
+    margin-bottom: 0.2em;
+}
+
+.volume div.media hr {
+    margin: 15%;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+}
+
+.volume .media {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.directory {
+    font-size: 0.7em;
+}
+
+.directory button {
+    padding: 0;
+}
+.directory .link {
+    padding-left: 1em;
+    padding-right: 1em;
+}

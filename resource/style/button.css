@@ -1,0 +1,26 @@
+button {
+    width: fit-content;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+    font-size: 1em;
+    border-radius: 2em;
+    background-color: #eeeeee;
+    color: #292929;
+    border-style: double;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #eeeeee40;
+    color: #292929;
+    cursor: default;
+}
+
+button:focus {
+    outline: 0;
+    background-color: #8de2e5;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+
+<link rel="stylesheet" type="text/css" href="/style/dark.css">
+<link rel="stylesheet" type="text/css" href="/style/instagram/search.css">
+
+<script>
+    const CHAT_NAME = "<py>value(request.chat.name)</py>";
+    const PAGE = <py>value(request.page)</py>;
+    const MAX_PAGE = <py>value(request.client.session.search["pages"])</py>;
+    // const jump = (function (h) {
+    //     document.getElementById("m" + h).scrollIntoView(true);
+    // });
+    const page = (function (node, dir) {
+        node.setAttribute("disabled", null);
+        let value = <py>value(request.page)</py> + dir;
+        let url = window.location.search.replace(/page=\d+/g, "page="+value);
+        if (url == window.location.search) {
+            url += "&page=" + value;
+        }
+        window.location.search = url;
+    });
+</script>
+
+<head>
+    <title>
+        <py>value(request.chat.name)</py> - <py>value(request.client.session.search["size"])</py> Results
+    </title>
+</head>
+
+<body>
+
+    <h1 id="m0"><a class="link" href="/ig/<py>value(request.chat.name)</py>/">Results</a></h1>
+    <button type="button" onclick="location.href='/ig/'+CHAT_NAME+'/search/'">Search</button>
+    <br>
+    <button id="btnp" type="button" onclick="page(this, -1)">Prev</button>
+    <button id="btnn" type="button" onclick="page(this,  1)">Next</button>
+    <div class="detail">
+        <p>Page <py>value(request.page+1)</py>/<py>value(request.client.session.search["pages"] + 1)</py></p>
+        <p ><py>value(request.client.session.search["size"])</py> Results</p>
+    </div>
+    <div id="chat" class="chat">
+        <hr>
+        <py>request.result</py>
+        <hr>
+    </div>
+    <br>
+    <button type="button" onclick="jump(0)">Jump to Top</button>
+
+</body>
+
+<script>
+    if (PAGE <= 0) {
+        document.getElementById("btnp").setAttribute("disabled", "");
+    }
+    if (PAGE >= MAX_PAGE) {
+        document.getElementById("btnn").setAttribute("disabled", "");
+    }
+</script>
+<script src="/js/instagram/chat.js"></script>
+<script>
+    chat.load();
+    chat.ext.process();
+</script>
+
+</html>

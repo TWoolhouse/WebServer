@@ -1,0 +1,14 @@
+<div id="m<py>value(request.elm.eid)</py>" class="msg">
+    <div class="user">
+        <button type="button" onclick="chat.msg.eid(<py>value(request.elm.eid)</py>)">
+            <img src="<py>request.get_pfp</py>">
+        </button>
+        <py>value(request.elm.link_user(request.user[2]))</py>
+        <p class="time">
+            <py>value(f"{request.time}")</py>
+        </p>
+    </div>
+    <div class="body <py>value(request.elm.ename)</py>">
+        <py>request.elm</py>
+    </div>
+</div>

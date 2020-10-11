@@ -1,0 +1,17 @@
+# meta
+link.css
+# meta
+
+body {
+    margin: 1em;
+}
+
+div {
+    font-size: 0.5em;
+}
+
+img {
+    /* width: 1vw; */
+    max-width: 100%;
+    height: auto;
+}

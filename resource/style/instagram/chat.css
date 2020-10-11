@@ -1,0 +1,71 @@
+# meta
+button.css
+link.css
+instagram/link_msg.css
+instagram/chat_body.css
+# meta
+
+.chat {
+    text-align: left;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+    padding-left: 0.1em;
+    padding-right: 0.1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-radius: 1em;
+    border: #eeeeee75;
+    border-style: double;
+}
+
+.msg {
+    font-size: 0.75em;
+    padding: 0.25em;
+    padding-bottom: 0;
+    border: none;
+    border-radius: 1em;
+}
+
+/* User */
+.msg .user {
+    font-size: 0.75em;
+    color: #eeeeee60;
+    display: inline;
+}
+.msg .user * {
+    vertical-align: sub;
+    font-size: 1em;
+    display: inline;
+}
+.msg .user button {
+    font-size: 0.9em;
+    background: #00000000;
+    border: 0;
+    margin-right: 0.25em;
+    padding: 0;
+    cursor: pointer;
+}
+.msg .user .time, .msg .user .eid {
+    margin: 0;
+    font-size: 0.7em;
+}
+.msg .user img {
+    vertical-align: sub;
+    height: 1em;
+    width: auto;
+    border-radius: 50%;
+}
+
+.msg .likes img {
+    -webkit-clip-path: url(#heart_container);
+    clip-path: url(#heart_container);
+    height: 1em;
+    width: auto;
+    border-radius: 50%;
+    vertical-align: baseline;
+}
+
+button.load {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}

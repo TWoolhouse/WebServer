@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+
+<link rel="stylesheet" type="text/css" href="/style/dark.css">
+<link rel="stylesheet" type="text/css" href="/style/instagram/home.css">
+
+<script>history.replaceState({}, null, "/ig/")</script>
+
+<head>
+    <title>Instagram</title>
+</head>
+
+<body>
+
+    <h1>Instagram</h1>
+    <form action="" method="post" class="search" id="form_chat">
+        <input type="text" name="chatname" placeholder="Group Chat Name" required><br>
+        <input type="password" name="chatpassword" placeholder="Password"><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+<script src="/js/instagram/form_name.js"></script>
+<script>form_name(document.getElementById("form_chat"));</script>
+
+</html>

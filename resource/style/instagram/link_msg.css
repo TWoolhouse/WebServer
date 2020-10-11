@@ -1,0 +1,14 @@
+.link.usr, .link.usr:visited {
+    color: #8de2e5;
+}
+.link.eid, .link.eid:visited {
+    color: #b484d6;
+}
+.link.pst, .link.pst:visited {
+    font-style: italic;
+    color: #ff5555;
+}
+.link.txt, .link.txt:visited {
+    font-style: italic;
+    color: #2d8fff;
+}

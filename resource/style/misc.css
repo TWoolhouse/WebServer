@@ -1,0 +1,7 @@
+body {
+    margin-bottom: 1em;
+}
+
+.dbl_zoom {
+    touch-action: manipulation;
+}

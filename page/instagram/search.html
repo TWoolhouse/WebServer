@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+
+<link rel="stylesheet" type="text/css" href="/style/dark.css">
+<link rel="stylesheet" type="text/css" href="/style/instagram/home.css">
+
+<head>
+    <title><py>value(request.chat.name)</py> - Search</title>
+</head>
+
+<body>
+
+    <h1><a class="link" href="/ig/<py>value(request.chat.name)</py>/">Search</a></h1>
+    <form action="/ig/<py>value(request.chat.name)</py>/s" method="GET" class="search" autocomplete="off" enctype="application/x-www-form-urlencoded">
+        <input type="text" name="user" placeholder="User"><br>
+        <input type="text" name="text" placeholder="Text"><br>
+        <input type="date" name="date" id="datepicker"><br>
+        <input class="submit" type="submit" value="Submit">
+    </form>
+
+</body>
+
+<!-- <script>
+    document.getElementById('datepicker').valueAsDate  = new Date();
+</script> -->
+
+</html>

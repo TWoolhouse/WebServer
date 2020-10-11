@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+
+<link rel="stylesheet" type="text/css" href="/style/dark.css">
+<link rel="stylesheet" type="text/css" href="/style/instagram/chat.css">
+
+<script>
+    const CHAT_NAME = "<py>value(request.chat)</py>";
+    history.replaceState({}, null, "/ig/" + CHAT_NAME + "/<py>value(request.eid)</py>");
+</script>
+
+<head>
+    <title><py>value(request.chat)</py></title>
+</head>
+
+<body>
+    <h1 id="m0"><py>value(request.chat)</py></h1>
+    <button type="button" onclick="location.href='/ig/'+CHAT_NAME+'/search/'">Search</button>
+    <br>
+    <button type="button" onclick="location.href='/ig/'+CHAT_NAME+'/save'">Saved</button>
+    <br>
+    <button id="btn_prev" class="load" type="button" onclick="chat.req.prev(64)">Load More</button>
+    <div id="chat", class="chat"></div>
+    <button id="btn_next" class="load" type="button" onclick="chat.req.next(64)">Load More</button>
+    <br>
+    <button type="button" onclick="jump(0)">Jump to Top</button>
+</body>
+
+<script src="/js/instagram/chat.js"></script>
+<script>
+    chat.req.load(null, <py>value(request.eid)</py>);
+    chat.req.next(16);
+</script>
+
+<svg viewBox='0 0 100 100' height='0' width='0'>
+    <defs>
+        <clipPath id='heart_container' clipPathUnits='objectBoundingBox'>
+            <path d='M.50,.90 L.20,.60 
+           A.15,.15 0 0,1 .50,.30 
+           A.15,.15 0 0,1 .80,.60 z' />
+        </clipPath>
+    </defs>
+</svg>
+
+</html>

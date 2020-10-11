@@ -1,0 +1,15 @@
+# meta
+button.css
+misc.css
+slider.css
+link.css
+# meta
+
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+hr {
+    margin-left: 5%;
+    margin-right: 5%;
+}
