@@ -8,7 +8,6 @@ import asyncio
 import codecs
 import json
 import functools
-import multiprocessing as mp
 from caching import cache
 
 USERNAME = "__bot__dinoswar_powa"

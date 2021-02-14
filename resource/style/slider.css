@@ -1,6 +1,8 @@
 .slider {
     margin-left: 1em;
     margin-right: 1em;
+    display: block;
+    margin: 2em auto;
 }
 .slider input {
     margin: 0;
@@ -9,12 +11,10 @@
     padding-right: 1em;
     -webkit-appearance: none;
     appearance: none;
-    width: 100%;
-    height: 4em;
+    width: 90%;
+    height: 2em;
     background: #eeeeee;
     outline: none;
-    opacity: 0.5;
-    transition: opacity .2s;
 }
 .slider input:hover {
     opacity: 1;
@@ -23,8 +23,8 @@
     -webkit-appearance: none;
     appearance: none;
     border-radius: 50%;
-    width: 3.5em;
-    height: 3.5em;
+    width: 1.9em;
+    height: 1.9em;
     background: #393939;
     cursor: pointer;
 }

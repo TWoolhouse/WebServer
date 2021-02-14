@@ -1,0 +1,23 @@
+.icycle {
+    /* height: auto; */
+    /* margin-bottom: auto; */
+    padding-bottom: 70vmax;
+    overflow-y: hidden;
+}
+
+.icycle img {
+    display: block;
+    position: absolute;
+    height: auto;
+    max-height: 70vmax;
+    width: auto;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.icycle img[ice] {
+    opacity: 1;
+    z-index: 2;
+}

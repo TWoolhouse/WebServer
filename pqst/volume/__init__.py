@@ -2,6 +2,7 @@ import website
 from interface import Interface
 import sound
 import sinput
+# from . import music_player as player
 
 class Command(website.Request):
 
@@ -29,11 +30,11 @@ class Command(website.Request):
             self.controller.sync(amt)
         elif cmd == "media":
             if amt == 0:
-                sound.media.pause()
+                sound.Media.pause()
             elif amt == 1:
-                sound.media.next()
+                sound.Media.next()
             elif amt == 2:
-                sound.media.prev()
+                sound.Media.prev()
 
     def yt(self):
         cmd = self.client.query["c"]
@@ -53,29 +54,29 @@ class Command(website.Request):
 class Home(website.Request):
     async def handle(self):
         self.client.buffer << website.buffer.Python(website.path+"page/volume/home.html", self)
-    class Youtube(website.Request):
-        async def handle(self):
-            self.client.buffer << website.buffer.Python(website.path+"page/volume/youtube.html", self)
-    class Spotify(website.Request):
-        async def handle(self):
-            self.client.buffer << website.buffer.Python(website.path+"page/volume/spotify.html", self)
-    class Groove(website.Request):
-        async def handle(self):
-            self.client.buffer << website.buffer.Python(website.path+"page/volume/groove.html", self)
+    # class Youtube(website.Request):
+    #     async def handle(self):
+    #         self.client.buffer << website.buffer.Python(website.path+"page/volume/youtube.html", self)
+    # class Spotify(website.Request):
+    #     async def handle(self):
+    #         self.client.buffer << website.buffer.Python(website.path+"page/volume/spotify.html", self)
+    # class Groove(website.Request):
+    #     async def handle(self):
+    #         self.client.buffer << website.buffer.Python(website.path+"page/volume/groove.html", self)
 
-class RootRequest(website.Request):
+# class RootRequest(website.Request):
 
-    async def handle(self):
-        return self.tree.traverse(self.request, self.seg, self.client)
+#     async def handle(self):
+#         return await self.tree(self)
 
-    root_tree = website.Tree(
-        Home,
-        end__=Home,
-        default__=Home,
-        cmd=Command,
-        youtube=Home.Youtube,
-        spotify=Home.Spotify,
-        groove=Home.Groove
-    )
-
-request = RootRequest.root_tree
+request = website.Tree(
+    Home,
+    end__=Home,
+    default__=Home,
+    cmd=Command,
+    # upload=player.Uploader,
+    # player=player.Home,
+    # youtube=Home.Youtube,
+    # spotify=Home.Spotify,
+    # groove=Home.Groove
+)

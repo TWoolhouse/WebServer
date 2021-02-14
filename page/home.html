@@ -12,12 +12,11 @@
 
 <body>
 
-    <h1>Hello Darling</h1>
+    <h1>Hi :)</h1>
     <div>
-        <p>Connection: <py>value(f"{request.client.peer}:{request.client.port}")</py></p>
-        <p>Server: <py>value(f"{request.client.hostname}:{request.client.server.https if request.client.ssl else request.client.server.http}")</py></p>
-        <img src="/img/home.png" title="This is Art. Please, stare at the Art." alt="SMILE :)">
-        <!-- <p><a href="https://youtu.be/ASZooYTwgEo">https://youtu.be/ASZooYTwgEo</a></p> -->
+        <p>Connection: <py>value(f"{client.peer}:{client.port}")</py></p>
+        <p>Server: <py>value(f"{client.hostname}:{client.server.https if client.ssl else client.server.http}")</py></p>
+        <a href="https://www.youtube.com/watch/dQw4w9WgXcQ"><img src="/img/home.png" title="This is Art. Please, stare at the Art." alt="SMILE :)"></a>
     </div>
 </body>
 
