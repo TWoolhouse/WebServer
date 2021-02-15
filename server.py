@@ -1,5 +1,4 @@
 import debug
-# debug.cfg.output =
 # debug.enable()
 from interface import Interface
 from path import PATH
@@ -78,30 +77,30 @@ class RootRequest(website.Request):
     @debug.log
     @debug.catch
     async def handle(self) -> website.Request:
-        print(f"{self.client.peer}:{self.client.port} /{'/'.join(self.request)}")
-        # print(f"{self.client.peer}:{self.client.port} /{'/'.join(self.request)} {self.client.query}")
+        website.log.request.info(f"/{'/'.join(self.request)}", self.client)
         try:
             return await self.tree.traverse(self)
-        except (website.error.TreeTraversal, website.error.BufferRead):
+        except (website.error.TreeTraversal, website.error.BufferRead) as err:
+            website.log.request.info(f"/{'/'.join(self.request)} -> FAIL", self.client, exc_info=err)
             return await Err404Request(self)
 
     tree = website.Tree(
         pqst.home,
         pqst.home,
-        key=pqst.admin,
-        style=CSSRequest,
+        js=JSRequest,
         img=ImgRequest,
         audio=AudioRequest,
         video=VideoRequest,
-        js=JSRequest,
-        ig=pqst.igdb,
-        vol=pqst.volume,
-        hue=pqst.hue,
-        candela=pqst.candela,
-        coldwater=pqst.coldwater,
-        cupboard=pqst.cupboard,
-        dressme=pqst.clothing,
-        hi=pqst.hi,
+        style=CSSRequest,
+        key=pqst.program["admin"],
+        hi=pqst.program["hi"],
+        ig=pqst.program["igdb"],
+        vol=pqst.program["volume"],
+        hue=pqst.program["hue"],
+        candela=pqst.program["candela"],
+        coldwater=pqst.program["coldwater"],
+        cupboard=pqst.program["cupboard"],
+        dressme=pqst.program["clothing"],
         **{
             "favicon.ico": website.buffer.File(f"{website.path}resource/image/favicon.ico"),
         },
@@ -110,7 +109,8 @@ class RootRequest(website.Request):
 RedirectStatus.root = RootRequest
 
 if __name__ == "__main__":
+    cfg = website.config("server.cfg")["server"]
     website.buffer.Buffer.cache_disable = True # DEBUG
-    server = website.Server(RootRequest, port=53335, ssl=53339)
+    server = website.Server(RootRequest, port=int(cfg["port"]), ssl=int(cfg["port_ssl"]))
     Interface.schedule(server.serve())
     Interface.main()

@@ -1,28 +1,16 @@
+import website
+import importlib
 from .home import request as home
+from collections import defaultdict
 
 __default = home
 
-try:
-    from .admin import request as admin
-except ImportError:
-    admin = __default
+program: dict[str, website.Request] = defaultdict(lambda: __default)
 
-try:
-    from .instagram import request as igdb
-except ImportError:
-    igdb = __default
-
-try:
-    from .volume import request as volume
-except ImportError:
-    volume = __default
-
-try:
-    from .cupboard import request as cupboard
-except ImportError:
-    cupboard = __default
-
-try:
-    from .clothing import request as clothing
-except ImportError:
-    clothing = __default
+for __name in website.config("server.cfg")["program"].keys():
+    try:
+        __mod = importlib.import_module(f".{__name}", "pqst")
+        __req = program[__name] = __mod.request
+        website.log._create(__name, __req.log_format if hasattr(__req, "log_format") else None)
+    except (ImportError, AttributeError):
+        program[__name] = __default

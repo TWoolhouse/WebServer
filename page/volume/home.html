@@ -13,30 +13,8 @@
 
 <body>
     <h1>Volume</h1>
-    <div class="volume">
-        <p class="display">V</p>
-        <hr>
-        <div class="dbl_zoom">
-            <button type="button" onclick="vol.move(2)">&and;</button>
-            <button class="flip" type="button" onclick="vol.move(-2)">&and;</button>
-            <br>
-            <button type="button" onclick="vol.move(10)">&And;</button>
-            <button class="flip" type="button" onclick="vol.move(-10)">&And;</button>
-        </div>
-        <div class="media dbl_zoom">
-            <hr>
-            <button type="button" onclick="vol.rev()">&LessLess;</button>
-            <button type="button" onclick="vol.ply()">&bigotimes;</button>
-            <button type="button" onclick="vol.fwd()">&GreaterGreater;</button>
-            <hr>
-        </div>
-        <div class="slider">
-            <input class="target" type="range" min="0" max="100" value="0" oninput="drag_slider(this.value)" onchange="this.oninput()">
-            <p id="volume_target" class="display">V</p>
-            <button type="button" onclick="vol.set()">Set</button>
-            <button type="button" onclick="vol.sync()">Sync</button>
-        </div>
-    </div>
+    <py>buffer(f"{path}page/volume/vol.html")</py>
+
     <!-- <hr>
     <div class="directory">
         <button type="button" onclick="location.href='/vol/youtube'"><a class="link" href="youtube">YouTube</a></button>
