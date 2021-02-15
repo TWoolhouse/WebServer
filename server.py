@@ -94,9 +94,9 @@ class RootRequest(website.Request):
         style=CSSRequest,
         key=pqst.program["admin"],
         hi=pqst.program["hi"],
-        ig=pqst.program["igdb"],
+        ig=pqst.program["instagram"],
         vol=pqst.program["volume"],
-        hue=pqst.program["hue"],
+        hue=pqst.program["light"],
         candela=pqst.program["candela"],
         coldwater=pqst.program["coldwater"],
         cupboard=pqst.program["cupboard"],
@@ -109,7 +109,10 @@ class RootRequest(website.Request):
 RedirectStatus.root = RootRequest
 
 if __name__ == "__main__":
-    cfg = website.config("server.cfg")["server"]
+    cfg = website.config("server.cfg")
+    # cfg.rwstate.write = True
+    cfg.rwstate.write = False
+    cfg = cfg["server"]
     website.buffer.Buffer.cache_disable = True # DEBUG
     server = website.Server(RootRequest, port=int(cfg["port"]), ssl=int(cfg["port_ssl"]))
     Interface.schedule(server.serve())
