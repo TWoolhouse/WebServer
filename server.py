@@ -114,6 +114,8 @@ if __name__ == "__main__":
     cfg.rwstate.write = False
     cfg = cfg["server"]
     website.buffer.Buffer.cache_disable = True # DEBUG
+    Interface.terminate.schedule(website.log.server.critical, "Server Terminate", None)
+    Interface.schedule(website.log.server.critical, "Server Initialise", None)
     server = website.Server(RootRequest, port=int(cfg["port"]), ssl=int(cfg["port_ssl"]))
     Interface.schedule(server.serve())
     Interface.main()

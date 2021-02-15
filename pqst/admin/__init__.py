@@ -3,6 +3,8 @@ import website
 import urllib.request
 from interface import Interface
 
+log = website.log.page("admin")
+
 class ARequest(website.Request):
     async def handle(self):
         self.client.buffer << website.buffer.Python(f"{website.path}page/admin/default.html", self)
@@ -48,6 +50,7 @@ class DisableServerRedirect(RedirectStatus):
 
 class Shutdown(ARequest):
     async def extra(self):
+        log.critical("Server Shutdown Request", self.client)
         async def timeout():
             await Interface.next(1)
             Interface.stop()
